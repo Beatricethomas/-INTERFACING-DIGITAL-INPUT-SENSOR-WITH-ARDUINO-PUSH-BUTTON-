@@ -1,8 +1,8 @@
 ## INTERFACING DIGITAL INPUT SENSOR WITH ARDUINO PUSH BUTTON
-## DATE :
-## NAME :																			             
-## ROLLNUMBER :
-## DEPARTMENT 
+## DATE : 15-04-2024
+## NAME	: BEATRICE THOMAS																	             
+## ROLLNUMBER : 212223110005
+## DEPARTMENT : CSE ( INTERNET OF THINGS )
 
 
 ## AIM:
@@ -33,12 +33,15 @@ EEPROM	512 bytes (ATmega168) or 1 KB (ATmega328)
 Clock Speed	16 MHz
 ## PIN DIAGRAM FOR ATMEGA 328
  
+FIGURE-01
+
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
-FIGURE-01
+FIGURE-02
+
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
-FIGURE-02
+
 ## PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
@@ -51,35 +54,49 @@ FIGURE-02
 
 ## CIRCUIT DIAGRAM 
 
+FIGURE -03
 
 ![image](https://user-images.githubusercontent.com/36288975/163530437-87a0afbd-b3c9-44ad-b907-5de63486fb9d.png)
 
 
 
-FIGURE -03
-
-
-
 
 ## PROGRAM 
- 
- 
 
 
+```
+int led=4;
+int pushbutton=3;
+void setup()
+{
+  pinMode(led,OUTPUT);
+  pinMode(pushbutton,INPUT);
+}
 
-
-
-
-
-
-
- 
- 
- 
-
+void loop()
+{
+  int pb;
+  pb=digitalRead(pushbutton);
+  if(pb==HIGH)
+  {
+  digitalWrite(led,HIGH);
+  delay(500); // Wait for 500 millisecond(s)
+  digitalWrite(led,LOW);
+  delay(500); // Wait for 500 millisecond(s)
+  }
+  else
+  {
+    delay(500);
+    digitalWrite(led, LOW);
+  }
+}
+```
 
 
 ## OUTPUT OF SIMULATION :
 
-[My image](username.github.com/repository/img/image.jpg)
+![alt text](<Screenshot 2024-02-15 110725.png>)
+
+
+![alt text](<Screenshot 2024-02-15 115344.png>)
 
